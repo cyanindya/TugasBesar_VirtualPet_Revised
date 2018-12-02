@@ -227,6 +227,10 @@ public class PetBehavior : MonoBehaviour {
         TimeSpan energyTimerSpan = newEnergyTimer - energyTimer;
         TimeSpan happinessTimerSpan = newHappinessTimer - happinessTimer;
 
+        // force sleep timer to be on zero if it runs out
+        if (remainingSleepDuration < TimeSpan.Zero)
+            remainingSleepDuration = TimeSpan.Zero;
+
         /// gradually reduce energy. sleeping reduces energy slower.
         if (isSleep)
         {

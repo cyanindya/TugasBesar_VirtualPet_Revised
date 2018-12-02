@@ -138,9 +138,11 @@ public class UIControl : MonoBehaviour {
     {
         if (pet.hasTakenBath)
         {
+            bathButton.enabled = false;
             bathButton.GetComponent<Image>().color = Color.gray;
         } else
         {
+            bathButton.enabled = true;
             bathButton.GetComponent<Image>().color = Color.white;
         }
     }
@@ -211,9 +213,11 @@ public class UIControl : MonoBehaviour {
 
         if (pet.remainingSleepDuration <= TimeSpan.Zero)
         {
+            sleepButton.enabled = false;
             sleepButton.GetComponent<Image>().color = Color.gray;
         } else
         {
+            sleepButton.enabled = true;
             sleepButton.GetComponent<Image>().color = Color.white;
         }
         
